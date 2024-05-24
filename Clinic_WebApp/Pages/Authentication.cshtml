@@ -1,0 +1,240 @@
+@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Authentication
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Авторизация";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Авторизация</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <meta charset="utf-8" />
+        <style>
+            *{ box-sizing: border-box; }
+            html, body {
+                font-family: 'Roboto', sans-serif, 'Segoe UI';
+                font-style: normal;
+                font-weight: normal;
+                padding: 0px;
+				background-color: rgba(40, 40, 45, 1);
+                background-image: url("background.jpg");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            h1{
+				margin-top: 0%;
+                font-size: 1.4em;
+            }
+            .wrapper {
+                display: grid;
+                height: 100%;
+                width: 100%;
+                grid-template-areas: "header header header"
+                    "leftside auth rightside";
+                grid-template-columns: 40% 20% 40%;
+                grid-template-rows: 5% 1fr;
+                background-color: transparent;
+            }
+            .auth {
+                background-color: rgb(40,40,40);
+                color: white;
+                grid-area: auth;
+                height: 23em;
+                width: 100%;
+                min-width: 16em;
+                max-width: 18em;
+                margin: 5%;
+                margin-top: 62%;
+                border-radius: 0.5em;
+            }
+            .auth form{
+                margin-top: 0em;
+                margin-left: 15%;
+                margin-right: 15%;
+            }
+            label {
+                text-align: center;
+                padding: 5%;
+				padding-left: 11%;
+                margin-top: 0em;
+            }
+            .input-login {
+                color: white;
+                border: none;
+                outline: none;
+                -webkit-appearance: none;
+                -ms-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-color: #4b4b4b;
+                margin-top: 3em;
+                margin-bottom: 5%;
+                padding-top: 12px;
+                padding: 12px;
+                border-radius: 3px;
+                width: 100%;
+            }
+            .input-password {
+                color: white;
+                outline: none;
+                margin-bottom: 10%;
+                border: none;
+                -webkit-appearance: none;
+                -ms-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-color: #4b4b4b;
+                padding: 12px;
+                border-radius: 3px;
+                width: 100%;
+            }
+            .input-login::placeholder{
+                color: white;
+            }
+            .input-password::placeholder {
+                color: white;
+            }
+            .input-login:focus{
+                border: 0px solid black;
+            }
+            .submit {
+                color: black;
+                height: 2.3em;
+                font-size: 1.2em;
+                width: 8em;
+                border-radius: 5px;
+                border: none;
+                margin-top: 0.4em;
+                margin-left: 18%;
+                font-size: medium;
+                background-color: #ffd408;
+                transition-property: background-color;
+                transition-duration: 180ms;
+            }
+            .submit:active{
+                background-color: #ffab08;
+            }
+            #forJoinH1{
+				font-family: sans-serif;
+                font-size: 0.7em;
+                margin: 0em;
+				margin-top: 0em;
+                padding: 0%;
+                margin-left: 31%;
+                text-align: center;
+            }
+			.validate-block{
+				background-color: #99352e;
+				margin-top: 20%;
+                margin-bottom: 5%;
+                padding: 1.4%;
+				padding-left: 12%;
+                border-radius: 0.5em;
+				height: 12%;
+                width: 100%;
+				color: white;
+				font-size: 70%;
+				font-family: sans-serif;
+				visibility: hidden;
+			}
+			.validate-password-block{
+				background-color: #99352e;
+				margin-top: 1%;
+                margin-bottom: 5%;
+                padding: 1.4%;
+				padding-left: 12%;
+                border-radius: 0.5em;
+				height: 12%;
+                width: 100%;
+				color: white;
+				font-size: 70%;
+				font-family: sans-serif;
+				visibility: hidden;
+			}
+			.icon{
+				margin-left: 43.5%;
+				margin-top: 10%;
+			}
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="auth">
+				<div class="icon">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="38" height="38" viewBox="0 0 256 256" xml:space="preserve">
+					<defs>
+					</defs>
+					<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+						<path d="M 45 83.657 c -0.768 0 -1.536 -0.293 -2.121 -0.879 L 21.5 61.399 c -1.172 -1.171 -1.172 -3.071 0 -4.242 c 1.171 -1.172 3.071 -1.172 4.242 0 L 45 76.415 l 19.258 -19.258 c 1.172 -1.172 3.07 -1.172 4.242 0 c 1.172 1.171 1.172 3.071 0 4.242 L 47.121 82.778 C 46.535 83.364 45.768 83.657 45 83.657 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(187,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+						<path d="M 41.362 63.654 c -0.042 0 -0.085 -0.001 -0.128 -0.003 c -1.181 -0.05 -2.223 -0.789 -2.66 -1.888 l -8.547 -21.484 l -4.866 10.387 c -0.494 1.055 -1.553 1.728 -2.717 1.728 H 3 c -1.657 0 -3 -1.343 -3 -3 s 1.343 -3 3 -3 h 17.536 l 6.998 -14.938 c 0.507 -1.083 1.595 -1.78 2.806 -1.726 c 1.196 0.036 2.256 0.778 2.698 1.89 l 8.635 21.703 l 7.665 -15.33 c 0.51 -1.02 1.591 -1.677 2.692 -1.658 c 1.14 0.003 2.179 0.652 2.683 1.674 l 4.129 8.385 H 87 c 1.657 0 3 1.343 3 3 s -1.343 3 -3 3 H 56.976 c -1.143 0 -2.187 -0.649 -2.691 -1.675 l -2.283 -4.636 l -7.957 15.913 C 43.535 63.016 42.494 63.654 41.362 63.654 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(200,200,200); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+						<path d="M 4.764 41.399 c -1.154 0 -2.254 -0.67 -2.749 -1.795 C -1.947 30.58 -0.01 20.252 6.95 13.292 c 9.25 -9.251 24.304 -9.251 33.556 0 L 45 17.787 l 4.494 -4.494 c 9.251 -9.251 24.303 -9.253 33.556 0 c 6.96 6.959 8.897 17.287 4.935 26.311 c -0.666 1.516 -2.435 2.207 -3.953 1.541 c -1.518 -0.666 -2.207 -2.436 -1.541 -3.953 c 2.961 -6.743 1.516 -14.458 -3.683 -19.656 c -6.911 -6.911 -18.158 -6.913 -25.071 0 l -6.615 6.615 c -1.172 1.172 -3.071 1.172 -4.242 0 l -6.615 -6.615 c -6.912 -6.911 -18.159 -6.911 -25.071 0 c -5.198 5.198 -6.644 12.914 -3.683 19.657 c 0.666 1.517 -0.024 3.287 -1.541 3.953 C 5.576 41.317 5.167 41.399 4.764 41.399 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(160,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+					</g>
+					</svg>
+			</div>
+                <label id="JoinH1"><h1>Вход</h1></label>
+                <label id="forJoinH1"><small>Для сотрудников</small></label>
+                <form method="post" asp-page="/Authorization" autocomplete="on" id="form" name="form">
+                    <input asp-for="Input.Login" class="input-login" placeholder="Логин" required autofocus><br />
+                    <input asp-for="Input.Password"  type="password" class="input-password" maxlength="6" placeholder="Пароль" required/><br />
+                    <input class="submit" type="submit" name="submit" value="Войти" />
+                </form>
+				<div class="validate-block">
+					<p>Логин должен быть больше 4 символов</p>
+				</div>
+				<div class="validate-password-block">
+					<p>Пароль должен быть длиной 6 символов</p>
+				</div>
+            </div>
+        </div>
+        <script>
+			const login = document.form.Input_Login;
+			const password = document.form.Input_Password;
+			function sendForm(e){
+				const loginVal = login.value;
+				const passwordVal = password.value;
+				
+				if(loginVal.length < 4 || passwordVal.length != 6){
+					if(loginVal.length < 4){
+						const validateBlock = document.getElementsByClassName("validate-block");
+						validateBlock[0].style = "visibility: visible;"
+					}
+					if(passwordVal.length != 6){
+						const validatePasswordBlock = document.getElementsByClassName("validate-password-block");
+						validatePasswordBlock[0].style = "visibility: visible;"
+					}
+					e.preventDefault();
+				}
+			}
+			function validateLogin(e){
+				if(e.target.value.length < 4){
+					e.target.style = "background-color: #99352e;";
+				}
+				else{
+					e.target.style = "background-color: #4b4b4b;";
+				}
+			}
+			function validatePassword(e){
+				if(e.target.value.length != 6){
+					e.target.style = "background-color: #99352e";
+				}
+				else{
+					e.target.style = "background-color: #4b4b4b;";
+				}
+			}
+			
+			const submit = document.form.submit;
+			submit.addEventListener("click", sendForm);
+			login.addEventListener("input", validateLogin);
+			password.addEventListener("input", validatePassword);
+		</script>
+    </body>
+</html>

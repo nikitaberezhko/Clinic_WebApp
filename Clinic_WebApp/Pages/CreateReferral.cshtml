@@ -1,0 +1,19 @@
+@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Clinic_WebApp.Pages.CreateReferral
+
+@{
+    ViewData["Title"] = "Создание направления";
+}
+
+<div class="main">
+    <div class="div-form-add-referral">
+        <form class="create-form" asp-page="/CreateReferral" asp-route-id="@Model.id">
+            <legend class="create-form-legend">Создание направление</legend>
+            <select class="create-select" style="height: 13%" asp-items="@Model._analyzes" asp-for="Input.analysisName" placeholder="Куда направление" required></select>
+            <input class="create-input-add-referral" asp-for="Input.date" placeholder="ДД.ММ.ГГГГ"  pattern="([0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9])" required>
+            <input class="create-input-add-referral" asp-for="Input.time" placeholder="ЧЧ:ММ" pattern="([0-9][0-9]:[0-9][0-9])" required>
+            <input class="create-referral-form-btn" type="submit" value="Создать">
+        </form>
+    </div>
+</div>

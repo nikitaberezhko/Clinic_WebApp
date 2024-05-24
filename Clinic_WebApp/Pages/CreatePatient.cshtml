@@ -1,0 +1,25 @@
+@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Clinic_WebApp.Pages.CreatePatient
+
+@{
+    ViewData["Title"] = "Создание пациента";
+}
+
+
+<div class="main">
+    <div class="div-form">
+        <form class="create-form" asp-page="/CreatePatient">
+            <legend class="create-form-legend">Создание пациента</legend>
+            <input class="create-input" asp-for="Input.Name" placeholder="Имя и фамилия" required>
+            <select class="create-select" asp-for="Input.Gender" required>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+            </select>
+            <input class="create-input" asp-for="Input.Age" placeholder="Возраст" min="0" max="100" required>
+            <input class="create-input" asp-for="Input.Policy" placeholder="Полис" required>
+            <input class="create-input" asp-for="Input.Phone" placeholder="Телефон" required>
+            <input class="create-form-btn" type="submit" value="Создать">
+        </form>
+    </div>
+</div>

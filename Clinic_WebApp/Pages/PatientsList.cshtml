@@ -1,0 +1,23 @@
+@page
+@using Clinic_WebApp.Model;
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model PatientsList
+
+@{
+    ViewData["Title"] = "Список Пациентов";
+}
+<div class="main">
+    <div class="patients-list">
+        @if (Model.Patients != null)
+        {
+            @foreach (Patient patient in Model.Patients)
+            {
+                <a asp-page="/MedicalCard" asp-route-id="@patient._id">
+                    @patient.name 
+                    <span style="margin-left: 50%;">Возраст: @patient.age Пол: @patient.ShowGenderRu()</span>
+                </a>
+            }
+        }
+        <a asp-page="/CreatePatient" style="text-align: center; background-color: rgba(200,200,200, 0.058);">+</a>
+    </div>
+</div>

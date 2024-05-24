@@ -1,0 +1,20 @@
+@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Clinic_WebApp.Pages.ChangeReferral
+
+@{
+	ViewData["Title"] = "Изменение направления";
+}
+
+<div class="main">
+	<div class="div-form-add-referral">
+		<form class="create-form" asp-page="/ChangeReferral" asp-route-id="@Model.id">
+			<legend class="change-referral-form-legend">Направление</legend>
+			<input class="change-input-add-referral" asp-for="Input.analysisName" type="text" placeholder="Куда направление" value="@Model.oldReferral.AnalysisType" required>
+			<input class="change-input-add-referral" asp-for="Input.date" type="text" placeholder="Дата" value="@Model.oldReferral.dateTime.Split()[0]" pattern="([0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9])" required>
+			<input class="change-input-add-referral" asp-for="Input.time" type="text" placeholder="Время" value="@Model.oldReferral.dateTime.Split()[1]" pattern="([0-9][0-9]:[0-9][0-9])" required>
+			<button class="change-referral-form-btn" type="submit">Изменить</button>
+			<a class="delete-referral-form-btn" asp-page="/DeleteReferral" asp-route-id="@Model.id">Удалить</a>
+		</form>
+	</div>
+</div>

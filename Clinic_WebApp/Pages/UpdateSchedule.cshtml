@@ -1,0 +1,100 @@
+@page
+@model UpdateSchedule
+
+@{
+    ViewData["Title"] = "Изменение расписания";
+}
+
+<datalist id="patientsList">
+    @if (Model.Patients != null)
+    {
+        @foreach (var patient in Model.Patients)
+        {
+            <option value="@patient.name">@patient.name</option>
+        }
+    }
+</datalist>
+<div class="main">
+    <div class="schedule">
+        <form class="update-schedule-form" asp-page="/UpdateSchedule">
+            <table>
+                <thead>
+                <tr>
+                    <th>Время</th>
+                    <th>Пн, 3 фев</th>
+                    <th>Вт, 4 фев</th>
+                    <th>Ср, 5 фев</th>
+                    <th>Чт, 6 фев</th>
+                    <th>Пт, 7 фев</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="border: none; background-color: transparent;"></td>	
+                </tr>
+                <tr>
+                    <td style="border: 0.1px solid gray; font-size: 100%;">9:00</td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[0]" value="@Model.Schedule.GetIndexValue(0)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[1]" value="@Model.Schedule.GetIndexValue(1)"></td>       
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[2]" value="@Model.Schedule.GetIndexValue(2)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[3]" value="@Model.Schedule.GetIndexValue(3)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[4]" value="@Model.Schedule.GetIndexValue(4)"></td>
+                </tr>
+                <tr>
+                    <td style="border: 0.1px solid gray; font-size: 100%;">10:00</td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[5]" value="@Model.Schedule.GetIndexValue(5)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[6]" value="@Model.Schedule.GetIndexValue(6)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[7]" value="@Model.Schedule.GetIndexValue(7)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[8]" value="@Model.Schedule.GetIndexValue(8)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[9]" value="@Model.Schedule.GetIndexValue(9)"></td>
+                </tr>
+                <tr>
+                    <td style="border: 0.1px solid gray; font-size: 100%;">11:00</td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[10]" value="@Model.Schedule.GetIndexValue(10)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[11]" value="@Model.Schedule.GetIndexValue(11)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[12]" value="@Model.Schedule.GetIndexValue(12)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[13]" value="@Model.Schedule.GetIndexValue(13)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[14]" value="@Model.Schedule.GetIndexValue(14)"></td>
+                </tr>
+                <tr>
+                    <td style="border: none; background-color: transparent;"></td>	
+                </tr>
+                <tr>
+                    <td style="border: 0.1px solid gray; font-size: 100%;">14:00</td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[15]" value="@Model.Schedule.GetIndexValue(15)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[16]" value="@Model.Schedule.GetIndexValue(16)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[17]" value="@Model.Schedule.GetIndexValue(17)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[18]" value="@Model.Schedule.GetIndexValue(18)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[19]" value="@Model.Schedule.GetIndexValue(19)"></td>
+                </tr>
+                <tr>
+                    <td style="border: 0.1px solid gray; font-size: 100%;">15:00</td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[20]" value="@Model.Schedule.GetIndexValue(20)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[21]" value="@Model.Schedule.GetIndexValue(21)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[22]" value="@Model.Schedule.GetIndexValue(22)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[23]" value="@Model.Schedule.GetIndexValue(23)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[24]" value="@Model.Schedule.GetIndexValue(24)"></td>
+                </tr>
+                <tr>
+                    <td style="border: 0.1px solid gray; font-size: 100%;">16:00</td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[25]" value="@Model.Schedule.GetIndexValue(25)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[26]" value="@Model.Schedule.GetIndexValue(26)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[27]" value="@Model.Schedule.GetIndexValue(27)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[28]" value="@Model.Schedule.GetIndexValue(28)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[29]" value="@Model.Schedule.GetIndexValue(29)"></td>
+                </tr>
+                <tr>
+                    <td style="border: 0.1px solid gray; font-size: 100%;">17:00</td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[30]" value="@Model.Schedule.GetIndexValue(30)"></td>              
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[31]" value="@Model.Schedule.GetIndexValue(31)"></td>             
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[32]" value="@Model.Schedule.GetIndexValue(32)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[33]" value="@Model.Schedule.GetIndexValue(33)"></td>
+                    <td><input class="schedule-select" list="patientsList" asp-for="Input[34]" value="@Model.Schedule.GetIndexValue(34)"></td>
+                </tr>
+                </tbody>
+            </table>
+            <input class="save-schedule-button" type="submit" value="Сохранить"/>
+        </form>
+        <a class="reset-button" asp-page="/ResetSchedule" asp-route-id="@Model.Doctor._id">Сбросить</a>
+    </div>
+</div>

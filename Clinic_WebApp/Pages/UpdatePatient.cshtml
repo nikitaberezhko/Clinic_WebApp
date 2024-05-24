@@ -1,0 +1,25 @@
+@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model UpdatePatient
+
+@{
+    ViewData["Title"] = "Изменение карты пациента";    
+}
+
+
+<div class="main">
+    <div class="div-form">
+        <form class="create-form" asp-page="/ChangePatient" asp-route-id="@Model.Patient._id">
+            <legend class="create-form-legend" style="margin-left: 32%;">Изменение карты пациента</legend>
+            <input class="create-input" asp-for="Input.Name" placeholder="Имя и фамилия" value="@Model.Patient.name" required>
+            <select class="create-select" asp-for="Input.Gender" value="@Model.Patient.gender" required>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+            </select>
+            <input class="create-input" asp-for="Input.Age" type="number" placeholder="Возраст" min="0" max="100" value="@Model.Patient.age" required>
+            <input class="create-input" asp-for="Input.Policy" placeholder="Полис" value="@Model.Patient.policy" required>
+            <input class="create-input" asp-for="Input.Phone" placeholder="Телефон" value="@Model.Patient.phone" required>
+            <input class="create-form-btn" type="submit" value="Сохранить">
+        </form>
+    </div>
+</div>

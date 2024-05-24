@@ -1,0 +1,17 @@
+@page
+@model Clinic_WebApp.Pages.ResetSchedule
+
+@{
+    ViewData["Title"] = "Сброс расписания";
+}
+
+<div class="main">
+    <div class="div-form-confirm-to-archive">
+        <form class="confirm-to-archive-form" asp-page="/ResetSchedule"asp-route-id="@Model.id">
+            <legend class="confirm-to-archive-form-legend">Подтвердите действие</legend>
+            <p style="margin-top: 7%;">Вы уверены что хотите сбросить расписание?</p>
+            <input class="confirm-to-archive-form-btn" type="submit" value="Да">
+            <a class="cancel-to-archive-form-btn" asp-page="/SchedulePage">Нет</a>
+        </form>
+    </div>
+</div>

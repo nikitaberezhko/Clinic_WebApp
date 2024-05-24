@@ -1,0 +1,25 @@
+@page
+@using Clinic_WebApp.Model
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ArchiveList
+
+@{
+    ViewData["Title"] = "Архив Пациентов";
+}
+<div class="main" style="flex-wrap: wrap;">
+    <div class="archive-search-card">
+        <form asp-page="/Archive" method="post" id="form" name="form" class="archive-search-form">
+                <input asp-for="SearchName" class="archive-search" placeholder="Имя пациента"/>
+                <input type="submit" value="Поиск" class="archive-search-submit" style="width: 14%; margin-left: 10%; text-align: center;"/>
+            </form>
+    </div>
+    <div class="patients-list-archive">
+        @if (Model.ArchivePatients != null)
+        {
+            @foreach (Patient patient in Model.ArchivePatients)
+            {
+                <a asp-page="/ArchiveMedicalCard" asp-route-id="@patient._id">@patient.name</a>
+            }
+        }
+    </div>
+</div>

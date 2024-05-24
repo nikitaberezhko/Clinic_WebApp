@@ -1,0 +1,22 @@
+@page
+@model Clinic_WebApp.Pages.BloodTestPage
+
+@{
+    ViewData["Title"] = "Анализ крови";
+}
+
+<div class="main">
+    <div class="bloodtest-card">
+        <p class="bloodtest-title">Анализ крови<span style="margin-left: 70%;">@Model.BloodT.dateTime</span></p>
+        <p>HGB: @Model.BloodT.HGB</p>
+        <p>PLT: @Model.BloodT.PLT</p>
+        <p>WBC: @Model.BloodT.WBC</p>
+        <p>RBC: @Model.BloodT.RBC</p>
+        <p>HTC: @Model.BloodT.HTC</p>
+        <p>Neutrophils: @Model.BloodT.Neutrophils</p>
+        <p>Monocytes: @Model.BloodT.Monocytes</p>
+        <p>Eosinophils: @Model.BloodT.Eosinophils</p>
+        <p>Basophils: @Model.BloodT.Basophils</p>
+        <p>Pymphocytes: @Model.BloodT.Pymphocytes</p>
+    </div>
+</div>

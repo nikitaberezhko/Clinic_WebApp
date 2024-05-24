@@ -1,0 +1,14 @@
+@page
+@model Clinic_WebApp.Pages.ECGPage
+
+@{
+    ViewData["Title"] = "ЭКГ";
+}
+
+<div class="main">
+    <div class="ecg-card"  style="width: 70%;">
+        <p class="ecg-title">ЭКГ <span style="margin-left: 80%;">@Model.EcgAnalysis.dateTime</span></p>
+        <p>Описание: @Model.EcgAnalysis.description</p>
+        <p>Ссылка на скан: @Model.EcgAnalysis.urlToScan</p>
+    </div>
+</div>

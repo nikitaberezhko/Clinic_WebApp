@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinic_WebApp", "Clinic_WebApp\Clinic_WebApp.csproj", "{94119CF1-FC54-4F3F-817B-9FF0F2265A60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clinic_WebApp.Tests", "Clinic_WebApp.Tests\Clinic_WebApp.Tests.csproj", "{17AFD459-0AFB-44E1-BB5C-EE8D61D6EEF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94119CF1-FC54-4F3F-817B-9FF0F2265A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94119CF1-FC54-4F3F-817B-9FF0F2265A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94119CF1-FC54-4F3F-817B-9FF0F2265A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94119CF1-FC54-4F3F-817B-9FF0F2265A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17AFD459-0AFB-44E1-BB5C-EE8D61D6EEF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17AFD459-0AFB-44E1-BB5C-EE8D61D6EEF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17AFD459-0AFB-44E1-BB5C-EE8D61D6EEF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17AFD459-0AFB-44E1-BB5C-EE8D61D6EEF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
